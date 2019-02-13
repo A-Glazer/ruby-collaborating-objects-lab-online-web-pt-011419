@@ -22,4 +22,13 @@ class Artist
   def self.all #class method so self will refer to the class
     @@all
   end
+
+  def self.find_or_create_by_name(name)
+    @@all.find do |artist|
+      if artist.name == name
+        name
+      else
+        new_artist = Artist.new(name)
+      end
+    end
 end
