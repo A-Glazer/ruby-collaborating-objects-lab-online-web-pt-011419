@@ -1,11 +1,12 @@
-require 'pry'
 class MP3Importer
-  attr_accessor :file
+  attr_accessor :path
 
-  def initialize(file)
-    Dir["/spec/fixtures/**/*"].import
-    binding.pry
+  def initialize(path)
+    @path = path
   end
 
+  def files
+
+  end
 
 end
