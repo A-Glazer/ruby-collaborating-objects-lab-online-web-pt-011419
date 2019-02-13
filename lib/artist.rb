@@ -15,11 +15,11 @@ class Artist
     @songs << song
   end
 
-  def save
+  def save #this is an instance method so self would refer to an instance
     @@all << self #self is an instance of Artist class
   end
 
-  def self.all
+  def self.all #class method so self will refer to the class
     @@all
   end
 end
