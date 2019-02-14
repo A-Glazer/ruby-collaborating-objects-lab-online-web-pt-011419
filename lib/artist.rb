@@ -17,6 +17,7 @@ class Artist
 
   def save #this is an instance method so self would refer to an instance
     @@all << self #self is an instance of Artist class
+    self
   end
 
   def self.all #class method so self will refer to the class
@@ -24,13 +25,7 @@ class Artist
   end
 
   def self.find_or_create_by_name(name)
-    @@all.find do |artist|
-      if artist.name == name
-        artist
-      else
-        new_artist = Artist.new(name)
-      end
-    end
+    self.all.find{|artist| artist.name == name} || self.new(name).save
   end
 
   def print_songs
